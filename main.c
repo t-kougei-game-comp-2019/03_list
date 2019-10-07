@@ -28,9 +28,12 @@ void showList(List *T)
 {
 	while (T!=NULL)
 	{
-		printf("%d\n", T->myData);
+		printf("%d", T->myData);
+		if(T->Down!=NULL)
+			printf(",");
 		T = T->Down;
 	}
+	printf("\n");
 }
 int main(int argc, char *argv[])
 {
