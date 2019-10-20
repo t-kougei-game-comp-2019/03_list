@@ -43,6 +43,5 @@ int main(int argc, char *argv[])
 			array[0] = input;
 		}
 	}
-
 	return 0;
 }
