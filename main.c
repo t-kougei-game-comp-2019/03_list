@@ -38,14 +38,9 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			for (int i = 0; i <  sizeof(array) / sizeof(array[0]); i++)
-			{
-				if (array[i] == 0)
-				{
-					array[i] = input;
-					break;
-				}
-			}
+			for (int i = 0; i <  sizeof(array) / sizeof(array[0]) - 1; i++)
+				array[sizeof(array) / sizeof(array[0]) - 1 - i] = array[sizeof(array) / sizeof(array[0]) - 2 - i];
+			array[0] = input;
 		}
 	}
 
