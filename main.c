@@ -5,7 +5,10 @@ int main(int argc, char *argv[])
 {
 	char str[5];
 	int array[100] = { 0 };
-	bool display;
+
+	//bool型として扱う(0 : false ,1: true)
+	int display;
+
 	while (fgets(str, sizeof(str), stdin)) {
 
 		int input = atoi(str);
@@ -20,11 +23,11 @@ int main(int argc, char *argv[])
 					else
 						break;
 				}
-				display = false;
+				display = 0;
 			}
 			else if (input == 0)
 			{
-				if (!display)
+				if (display == 0)
 				{
 
 					for (int i = 0; i < sizeof(array) / sizeof(array[0]) && array[i] != 0; i++)
@@ -35,7 +38,7 @@ int main(int argc, char *argv[])
 							printf(",%d", array[i]);
 					}
 					printf("\n");
-					display = true;
+					display = 1;
 				}
 			}
 			else
@@ -44,7 +47,7 @@ int main(int argc, char *argv[])
 					array[sizeof(array) / sizeof(array[0]) - 1 - i] = array[sizeof(array) / sizeof(array[0]) - 2 - i];
 
 				array[0] = input;
-				display = false;
+				display = 0;
 			}
 	}
 	return 0;
