@@ -43,7 +43,6 @@ int main(int argc, char *argv[])
 				if (array[i] == 0)
 				{
 					array[i] = input;
-					printf("%dが[%d]に代入されました。\n",input,i);
 					break;
 				}
 			}
