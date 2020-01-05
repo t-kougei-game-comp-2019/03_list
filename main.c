@@ -9,7 +9,8 @@ typedef struct StackList {
 List* pushData(List* T, int data)
 {
 	List* tmp = (List*)malloc(sizeof(List));
-	if (tmp == NULL) {
+	if (tmp == NULL)
+	{
 		printf("メモリが確保できません\n");
 
 		return NULL;
@@ -50,12 +51,17 @@ int main(int argc, char* argv[])
 	{
 		int tmp = strtol(str, NULL, 10);
 		if (tmp == 0)
+		{
 			showList(TOP);
+		}
 		else if (tmp == -1)
+		{
 			TOP = popData(TOP);
+		}
 		else
+		{
 			TOP = pushData(TOP, tmp);
+		}
 	}
-
 	return 0;
 }
